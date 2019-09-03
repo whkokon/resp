@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: service-provider
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/1902b?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123
 eureka:
   client:
     service-url:
@@ -11,3 +16,8 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
+
+mybatis:
+  config-locations: classpath:mybatis/confg.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.jk.model
